@@ -1,68 +1,178 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Select Your coding language</title>
+   
 
-<div class="home">
+   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+   
+</head>
+<body>
+   <div class="bdy">
+   <div class="wrapper">
+      <h1 class="header">Please select the coding language you wish to learn!</h1>
+
+      <div class="logged-in-user">
+         <div class="accounts">
+            <ol class="users-list">
+               <a href="html.letscodebeta.tk">
+               <li class="users-list-item">
+                  <div class="avatar" style="background-image: url('https://media.discordapp.net/attachments/474721949134618625/519703412867334174/unknown.png?width=301&height=301')">   
+                  </div>
+                  <div class="user-details">
+                    <center><h2>Html</h2></center>
+                  </div>
+               </li class="users-list-item">
+                  </a>
+               <a href="python.letscodebeta.tk">
+                            <li class="users-list-item">
+                  <div class="avatar" style="background-image: url('https://media.discordapp.net/attachments/474721949134618625/519702846187503618/unknown.png?width=301&height=301')">   
+                  </div>
+                  <div class="user-details">
+                    <center><h2>Python</h2></center>
+                  </div>
+               </li class="users-list-item">
+                  </a>
+               <a href="batch.letscodebeta.tk">
+                              <li class="users-list-item">
+                  <div class="avatar" style="background-image: url('https://media.discordapp.net/attachments/474721949134618625/519704706654797825/unknown.png?width=301&height=301')">   
+                  </div>
+                  <div class="user-details">
+                    <center><h2>Batch</h2></center>
+                  </div>
+                        
+               </li class="users-list-item">
+               </a>
+               <a href="lua.letscodebeta.tk">
+               <li class="users-list-item">
+                  <div class="avatar" style="background-image: url('https://media.discordapp.net/attachments/474721949134618625/519704318971215890/unknown.png?width=301&height=301')">   
+                  </div>
+                  <div class="user-details">
+                     <center><h2>LUA</h2></center>
+                  </div>
+               </li>
+               </a>
+            </ol>
+         </div>
+      </div>
+   </div>
+      </div>
+</body>
+<style>
  
-  
-    <div class="row pack">
+body {
+   font-family: 'Abel', sans-serif;
+   background-image: url('https://letscodebeta.tk/trianglify.png')
+}
 
-        {% for post in paginator.posts %}   
-            <div class="col-md-4 card">
-             <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">    
-                <div class="panel panel-default">
-                  
-                  {% if post.img %}
-                  <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
-                  {% else %}
-                  <img width="100%" src="{{site.baseurl}}/images/webjeda-logo-big.jpg" alt="{{site.title}}">
-                  {% endif %}
-                  
-                  <div class="panel-body">
-                    <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
-                  </div>
-                  
-                  <div class="panel-body"><small>
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small>
-                  </div>
-                </div>
-                </a>
-            </div>
-        
-          {% endfor %}
+.wrapper {
+      max-width: 28em;
+   min-width: 15em;
+   margin: auto;
+   
+}
 
-    </div> 
-    
-<div class="row">
-    <div class="col-md-4">  </div>
-    <div class="col-md-4">
-        {% if paginator.total_pages > 1 %}
-        <ul class="pagination">
-          {% if paginator.previous_page %}
-            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
-          {% else %}
-            <li><span>&laquo; Prev</span></li>
-          {% endif %}
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
 
-          {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <li class="active"><span><em>{{ page }}</em></span></li>
-            {% elsif page == 1 %}
-            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-            {% else %}
-            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-            {% endif %}
-          {% endfor %}
+.bdy {
+   background: #2C2F33;
+   border-radius: 30px;
+   height: 650px;
+   width: 600px;
+   align: center;
+   left: 35%;
+   top: 35%;
+   position: absolute;
+}
 
-          {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
-          {% else %}
-            <li><span >Next &raquo;</span></li>
-          {% endif %}
-          </ul>
-        {% endif %}
+.header {
+   text-align: center;
+   color: white;
+}
 
-    </div>
-    <div class="col-md-4">  </div>
-</div>
-</div>
+
+/*Showing Logged In Users */
+.users-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.users-list-item {
+  padding: 20px;
+  background: white;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   margin-bottom:10px;
+   border-radius: 10px;
+}
+
+.users-list-item:hover {
+   cursor: pointer;
+   background-color: #f2f2f2
+   margin: 0;
+   margin-bottom: 35px;
+   -webkit-animation: bgcolor 8s infinite;
+    animation: bgcolor 4s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+   margin-top: 10px;
+   box-shadow: 0 20px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@keyframes bgcolor {
+    0% {
+        background-color: #45a3e5
+    }
+
+    30% {
+        background-color: #66bf39
+    }
+
+    60% {
+        background-color: #eb670f
+    }
+
+    90% {
+        background-color: #f35
+    }
+
+    100% {
+        background-color: #864cbf
+    }
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 55px;
+  flex-shrink: 0;
+}
+
+.user-details {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+
+  flex: 1;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-details p {
+  margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ </style>
+</html>
